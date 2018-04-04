@@ -3,32 +3,42 @@
   height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
-  position: absolute; }
+  position: absolute;
+  animation-direction: normal;
+  animation-duration: 7s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  z-index: 100; }
+
+body {
+  overflow: hidden;
+  margin: 0; }
 
 .container {
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 50% 50%;
-  border: 1px solid black; }
+  grid-template-rows: 50% 50%; }
 
 #top {
   grid-column: 1;
   grid-row: 1;
-  background-image: url("pokeTop.png"); }
+  background-image: url("pokeTop.png");
+  animation-name: topTranslate; }
 
 #bot {
   grid-column: 1;
   grid-row: 2;
-  background-image: url("pokeBot.png"); }
+  background-image: url("pokeBot.png");
+  animation-name: botTranslate; }
 
 @keyframes topTranslate {
   from {
-    transform: translateY(500px); }
+    transform: translateY(0px); }
   to {
     transform: translateY(-500px); } }
 @keyframes botTranslate {
   from {
-    transform: translateY(500px); }
+    transform: translateY(0px); }
   to {
     transform: translateY(700px); } }
 

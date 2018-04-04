@@ -1,41 +1,50 @@
-@mixin startGrid($column, $row,$url) {
+@mixin startGrid($column, $row,$url,$name) {
     grid-column: $column;
     grid-row: $row;
-    background-image: url($url)
+    background-image: url($url);
+    animation-name: $name;
 }
 
-%fullbody {
+%fullbodywithanimation {
     width: 100%;
     height: 100%;
-    // background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
-    position: absolute; 
+    position: absolute;
+    animation-direction: normal;
+    animation-duration: 7s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards; 
+    z-index: 100;
+}
+
+body {
+    overflow: hidden;
+    margin: 0;
 }
 .container {
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 50% 50%;
-    border: 1px solid black;
 }
 
 #top {
-    @extend %fullbody;
-    @include startGrid(1, 1, 'pokeTop.png')
+    @extend %fullbodywithanimation;
+    @include startGrid(1, 1, 'pokeTop.png', topTranslate)
     
 }
 
 #bot {
-    @extend %fullbody;
-    @include startGrid(1, 2,'pokeBot.png' )
+    @extend %fullbodywithanimation;
+    @include startGrid(1, 2,'pokeBot.png', botTranslate)
 }
 
 @keyframes topTranslate {
-    from {transform: translateY(500px)}
+    from {transform: translateY(0px)}
     to {transform: translateY(-500px)}
 }
 
 @keyframes botTranslate {
-    from {transform: translateY(500px)}
+    from {transform: translateY(0px)}
     to {transform: translateY(700px)}
 }
