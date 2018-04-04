@@ -1,0 +1,41 @@
+@mixin startGrid($column, $row,$url) {
+    grid-column: $column;
+    grid-row: $row;
+    background-image: url($url)
+}
+
+%fullbody {
+    width: 100%;
+    height: 100%;
+    // background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute; 
+}
+.container {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 50% 50%;
+    border: 1px solid black;
+}
+
+#top {
+    @extend %fullbody;
+    @include startGrid(1, 1, 'pokeTop.png')
+    
+}
+
+#bot {
+    @extend %fullbody;
+    @include startGrid(1, 2,'pokeBot.png' )
+}
+
+@keyframes topTranslate {
+    from {transform: translateY(500px)}
+    to {transform: translateY(-500px)}
+}
+
+@keyframes botTranslate {
+    from {transform: translateY(500px)}
+    to {transform: translateY(700px)}
+}

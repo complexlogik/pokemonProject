@@ -1,0 +1,35 @@
+#top, #bot {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute; }
+
+.container {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 50% 50%;
+  border: 1px solid black; }
+
+#top {
+  grid-column: 1;
+  grid-row: 1;
+  background-image: url("pokeTop.png"); }
+
+#bot {
+  grid-column: 1;
+  grid-row: 2;
+  background-image: url("pokeBot.png"); }
+
+@keyframes topTranslate {
+  from {
+    transform: translateY(500px); }
+  to {
+    transform: translateY(-500px); } }
+@keyframes botTranslate {
+  from {
+    transform: translateY(500px); }
+  to {
+    transform: translateY(700px); } }
+
+/*# sourceMappingURL=pokeballopen.css.map */
