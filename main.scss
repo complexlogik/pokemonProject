@@ -1,0 +1,102 @@
+@mixin startGrid($column, $row, $url, $name) {
+  grid-column: $column;
+  grid-row: $row;
+  background-image: url($url);
+  animation-name: $name;
+}
+
+%fullbodywithanimation {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  animation-direction: normal;
+  animation-duration: 12s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  z-index: 1;
+}
+
+%platforms {
+  background-repeat: no-repeat;
+  background-size: contain;
+  animation-name: grow;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  margin: 1em;
+  padding: 1em;
+}
+
+body {
+  overflow: hidden;
+  margin: 0;
+  background-image: url("whiteBg.jpg");
+}
+.container {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 50% 50%;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr, 1fr, 1fr;
+  grid-template-rows: 1fr, 3fr, 1fr;
+}
+
+.avatar {
+  @include startGrid(1, 4/6, "pokeOnPlat.jpg", grow);
+  @extend %platforms;
+  height: 600px;
+  width: 600px;
+}
+
+.rightSide {
+  @include startGrid(2, 2, "platform.jpg", grow);
+  @extend %platforms;
+  height: 400px;
+  width: 400px;
+}
+
+#top {
+  @extend %fullbodywithanimation;
+  @include startGrid(1, 1, "pokeTop.png", topTranslate);
+}
+
+.nav {
+  grid-column: 1;
+  grid-row: 1;
+}
+#bot {
+  @extend %fullbodywithanimation;
+  @include startGrid(1, 2, "pokeBot.png", botTranslate);
+}
+
+@keyframes topTranslate {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-1500px);
+  }
+}
+
+@keyframes botTranslate {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(1700px);
+  }
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
