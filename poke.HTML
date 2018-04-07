@@ -5,20 +5,80 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Page Title</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
         <link rel="stylesheet" type="text/css" media="screen" href="poke.css" />
-        <script src="main.js"></script>
     </head>
     <body>
-        <div class="carousel carousel-slider">
-            <a class="carousel-item" href="#one!"><img
-                    src="https://lorempixel.com/800/400/food/1"></a>
-            <a class="carousel-item" href="#two!"><img
-                    src="https://lorempixel.com/800/400/food/2"></a>
-            <a class="carousel-item" href="#three!"><img
-                    src="https://lorempixel.com/800/400/food/3"></a>
-            <a class="carousel-item" href="#four!"><img
-                    src="https://lorempixel.com/800/400/food/4"></a>
-        </div>
-        <script src="main.js"></script>
-    </body>
-</html>
+        <div class='holder'>
+            <div id='poke'></div>
+            <div id='nav'>
+                <div id='emptydiv'></div>
+                <div id='home'><a href='index.html'>Home</a></div>
+                <div id='pokedex'><a href= '#'>Pokedex</a></div>
+                <div id='badges'><a href= '#'>Badges</a></div>
+            </div>
+            <div class= 'z-depth-5 card' id='greninja'>
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="greninjaSlide.png">
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator yellow-text text-darken-4
+                        center-align">Greninja
+
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">Greninja<i
+                                class="material-icons right">close</i></span>
+                        <p>pokemon info</p>
+                    </div>
+                </div>
+                <div class= 'z-depth-5 card' id='solgaleo'>
+                    <div class="card-image waves-effect waves-block
+                        waves-light">
+                        <img class="activator" src="solgaleoSlide.png">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator yellow-text
+                            text-darken-4 center-align">Solgaleo
+
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4"><section id="solname">Solgaleo</section><i
+                                    class="material-icons right">close</i></span>
+                            <p id='solInfo'>
+                                    <li id="solhp"></li>
+                                    <li id="solattack"></li>
+                                    <li id="soldefence"></li>
+                                    <li id="solability1"></li>
+                                    <li id="solability2"></li>
+                                    <li id="solability3"></li>
+                                    </ul> 
+                            </p>
+                        </div>
+                    </div>
+                    <div class= 'z-depth-5 card'id='luxray'>
+                        <div class="card-image waves-effect waves-block
+                            waves-light">
+                            <img class="activator" src="luxray.png">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator yellow-text
+                                text-darken-4 center-align">Luxray
+
+                            </div>
+                            <div class="card-reveal">
+                                <span class="card-title grey-text
+                                    text-darken-4">Luxray<i
+                                        class="material-icons right">close</i></span>
+                                <p>pokemon info</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+                <script src="ajax.js"></script>
+                <script
+                    src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+            </body>
+        </html>>

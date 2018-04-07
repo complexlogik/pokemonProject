@@ -1,0 +1,90 @@
+body {
+  overflow: hidden;
+  margin: 0;
+  background-image: url("whiteBg.jpg");
+  @import url("https://fonts.googleapis.com/css?family=Raleway");
+  font-family: 'Source Sans Pro', sans-serif; }
+
+a:link, a:visited {
+  color: #2B6DB4;
+  text-decoration: none;
+  cursor: pointer; }
+
+a:link:active, a:visited:active {
+  color: #2B6DB4; }
+
+a:hover, #home:hover, #pokedex:hover, #badges:hover {
+  color: #fad551;
+  text-shadow: 2px 1px #2B6DB4; }
+
+#nav {
+  grid-column: 1/7;
+  grid-row: 1;
+  background-color: #fad551;
+  height: 90px;
+  padding: 2em 1em 0em 10em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  z-index: -1;
+  color: #2B6DB4;
+  font-size: 18px;
+  margin: 0em 1em 1em 1em;
+  box-shadow: 0.35em 0.35em #2B6DB4;
+  opacity: .9; }
+
+#poke {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  background-image: url("pokemonHeader.png");
+  width: 320px;
+  height: 150px;
+  background-size: contain;
+  background-repeat: no-repeat; }
+
+.holder {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 5fr 5fr;
+  min-height: 100%;
+  min-width: 100%; }
+
+.card {
+  display: flex !important;
+  flex-direction: row !important;
+  padding: 2px !important;
+  margin: 20px !important; }
+
+#greninja {
+  grid-column: 1;
+  grid-row: 2;
+  height: 350px;
+  width: 425px;
+  background-size: contain; }
+
+#solgaleo {
+  grid-column: 2;
+  grid-row: 2;
+  height: 350px;
+  width: 425px;
+  background-size: contain; }
+
+#luxray {
+  grid-column: 3;
+  grid-row: 2;
+  height: 350px;
+  width: 430px;
+  background-size: contain; }
+
+.card .card-image img {
+  display: block;
+  border-radius: 2px 2px 0 0;
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 300px;
+  width: 300px; }
+
+/*# sourceMappingURL=poke.css.map */

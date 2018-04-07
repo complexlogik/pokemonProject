@@ -1,3 +1,31 @@
+$yellow: rgb(250, 213, 81);
+$blue: #2b6db4;
+
+body {
+  overflow: hidden;
+  margin: 0;
+  background-image: url("whiteBg.jpg");
+  @import url("https://fonts.googleapis.com/css?family=Raleway");
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+a:link,
+a:visited {
+  color: $blue;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:link:active,
+a:visited:active {
+  color: $blue;
+}
+
+a:hover {
+  color: $yellow;
+  text-shadow: 2px 1px $blue;
+}
+
 @mixin startGrid($column, $row, $url, $name) {
   grid-column: $column;
   grid-row: $row;
@@ -15,7 +43,14 @@
   animation-duration: 12s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-  z-index: 1;
+  z-index: 2;
+}
+
+%animation {
+  animation-direction: normal;
+  animation-duration: 10s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 %platforms {
@@ -29,28 +64,45 @@
   padding: 1em;
 }
 
-body {
-  overflow: hidden;
-  margin: 0;
-  background-image: url("whiteBg.jpg");
-}
-.container {
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 50% 50%;
+%nav {
+  grid-column: 1/10;
+  grid-row: 1;
+  background-color: $yellow;
+  height: 50px;
+  padding: 2em 1em 0em 10em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  z-index: -1;
+  color: $blue;
+  font-size: 18px;
+  margin: 0em 1em 1em 1em;
+  box-shadow: 0.35em 0.35em $blue;
+  opacity: 0.9;
 }
 
-.wrapper {
+%pokebanner {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  background-image: url("pokemonHeader.png");
+  width: 320px;
+  height: 150px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.container {
   display: grid;
-  grid-template-columns: 1fr, 1fr, 1fr;
-  grid-template-rows: 1fr, 3fr, 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 20fr 1fr;
 }
 
 .avatar {
-  @include startGrid(1, 4/6, "pokeOnPlat.jpg", grow);
+  @include startGrid(1, 2/4, "pokeOnPlat.jpg", grow);
   @extend %platforms;
-  height: 600px;
-  width: 600px;
+  height: 35em;
+  width: 35em;
+  margin-right: 5em;
 }
 
 .rightSide {
@@ -60,15 +112,108 @@ body {
   width: 400px;
 }
 
+.trainerCard {
+  grid-column: 2/20;
+  grid-row: 2;
+  color: $blue;
+  border: 2px solid $blue;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 1em 1em 0em 1em;
+  padding: 1em;
+  height: 30em;
+  width: 90%;
+  opacity: 0.9;
+  line-height: 1.4;
+  animation-name: show;
+  animation-direction: normal;
+  animation-duration: 15s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.holder {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 5fr;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+.card {
+  display: flex !important;
+  flex-direction: row !important;
+  // height: 150px !important;
+  // width: 150px !important;
+  padding: 2px !important;
+  margin: 2px !important;
+}
+
+#shinx {
+  grid-column: 1;
+  grid-row: 2;
+  height: 100%;
+  width: 100%;
+  background-size: contain;
+}
+
+#luxio {
+  grid-column: 2;
+  grid-row: 2;
+  height: 100%;
+  width: 100%;
+  background-size: contain;
+}
+
+#luxray {
+  grid-column: 3;
+  grid-row: 2;
+  height: 100%;
+  width: 100%;
+  background-size: contain;
+}
+
+.card .card-image img {
+  display: block;
+  border-radius: 2px 2px 0 0;
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 300px;
+  width: 300px;
+}
+
 #top {
   @extend %fullbodywithanimation;
   @include startGrid(1, 1, "pokeTop.png", topTranslate);
 }
 
-.nav {
-  grid-column: 1;
-  grid-row: 1;
+.poke {
+  @extend %pokebanner;
+  animation-name: navdown;
+  @extend %animation;
+  z-index: 1;
 }
+
+#poke {
+  @extend %pokebanner;
+}
+
+.nav {
+  @extend %nav;
+  animation-name: navdown;
+  @extend %animation;
+  z-index: 0;
+}
+
+#nav {
+  @extend %nav;
+}
+
 #bot {
   @extend %fullbodywithanimation;
   @include startGrid(1, 2, "pokeBot.png", botTranslate);
@@ -89,6 +234,24 @@ body {
   }
   to {
     transform: translateY(1700px);
+  }
+}
+
+@keyframes navdown {
+  from {
+    transform: translateX(-1200px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 

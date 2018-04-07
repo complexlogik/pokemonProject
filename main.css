@@ -1,3 +1,24 @@
+body {
+  overflow: hidden;
+  margin: 0;
+  background-image: url("whiteBg.jpg");
+  @import url("https://fonts.googleapis.com/css?family=Raleway");
+  font-family: "Source Sans Pro", sans-serif; }
+
+a:link,
+a:visited {
+  color: #2b6db4;
+  text-decoration: none;
+  cursor: pointer; }
+
+a:link:active,
+a:visited:active {
+  color: #2b6db4; }
+
+a:hover {
+  color: #fad551;
+  text-shadow: 2px 1px #2b6db4; }
+
 #top, #bot {
   width: 100%;
   height: 100%;
@@ -8,7 +29,13 @@
   animation-duration: 12s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-  z-index: 1; }
+  z-index: 2; }
+
+.poke, .nav {
+  animation-direction: normal;
+  animation-duration: 10s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; }
 
 .avatar, .rightSide {
   background-repeat: no-repeat;
@@ -20,28 +47,44 @@
   margin: 1em;
   padding: 1em; }
 
-body {
-  overflow: hidden;
-  margin: 0;
-  background-image: url("whiteBg.jpg"); }
+.nav, #nav {
+  grid-column: 1/10;
+  grid-row: 1;
+  background-color: #fad551;
+  height: 50px;
+  padding: 2em 1em 0em 10em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  z-index: -1;
+  color: #2b6db4;
+  font-size: 18px;
+  margin: 0em 1em 1em 1em;
+  box-shadow: 0.35em 0.35em #2b6db4;
+  opacity: 0.9; }
+
+.poke, #poke {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  background-image: url("pokemonHeader.png");
+  width: 320px;
+  height: 150px;
+  background-size: contain;
+  background-repeat: no-repeat; }
 
 .container {
   display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 50% 50%; }
-
-.wrapper {
-  display: grid;
-  grid-template-columns: 1fr,1fr,1fr;
-  grid-template-rows: 1fr,3fr,1fr; }
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 20fr 1fr; }
 
 .avatar {
   grid-column: 1;
-  grid-row: 0.6666666667;
+  grid-row: 0.5;
   background-image: url("pokeOnPlat.jpg");
   animation-name: grow;
-  height: 600px;
-  width: 600px; }
+  height: 35em;
+  width: 35em;
+  margin-right: 5em; }
 
 .rightSide {
   grid-column: 2;
@@ -51,15 +94,85 @@ body {
   height: 400px;
   width: 400px; }
 
+.trainerCard {
+  grid-column: 2/20;
+  grid-row: 2;
+  color: #2b6db4;
+  border: 2px solid #2b6db4;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 1em 1em 0em 1em;
+  padding: 1em;
+  height: 30em;
+  width: 90%;
+  opacity: 0.9;
+  line-height: 1.4;
+  animation-name: show;
+  animation-direction: normal;
+  animation-duration: 15s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; }
+
+.holder {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 5fr;
+  min-height: 100%;
+  min-width: 100%; }
+
+.card {
+  display: flex !important;
+  flex-direction: row !important;
+  padding: 2px !important;
+  margin: 2px !important; }
+
+#shinx {
+  grid-column: 1;
+  grid-row: 2;
+  height: 100%;
+  width: 100%;
+  background-size: contain; }
+
+#luxio {
+  grid-column: 2;
+  grid-row: 2;
+  height: 100%;
+  width: 100%;
+  background-size: contain; }
+
+#luxray {
+  grid-column: 3;
+  grid-row: 2;
+  height: 100%;
+  width: 100%;
+  background-size: contain; }
+
+.card .card-image img {
+  display: block;
+  border-radius: 2px 2px 0 0;
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 300px;
+  width: 300px; }
+
 #top {
   grid-column: 1;
   grid-row: 1;
   background-image: url("pokeTop.png");
   animation-name: topTranslate; }
 
+.poke {
+  animation-name: navdown;
+  z-index: 1; }
+
 .nav {
-  grid-column: 1;
-  grid-row: 1; }
+  animation-name: navdown;
+  z-index: 0; }
 
 #bot {
   grid-column: 1;
@@ -77,10 +190,20 @@ body {
     transform: translateY(0px); }
   to {
     transform: translateY(1700px); } }
+@keyframes navdown {
+  from {
+    transform: translateX(-1200px); }
+  to {
+    transform: translateX(0px); } }
+@keyframes show {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
 @keyframes grow {
   0% {
     transform: scale(1); }
   100% {
     transform: scale(1.1); } }
 
-/*# sourceMappingURL=pokeballopen.css.map */
+/*# sourceMappingURL=main.css.map */
