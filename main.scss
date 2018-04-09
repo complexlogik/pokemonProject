@@ -8,7 +8,7 @@ body {
   @import url("https://fonts.googleapis.com/css?family=Raleway");
   font-family: "Source Sans Pro", sans-serif;
 }
-
+ul,
 a:link,
 a:visited {
   color: $blue;
@@ -16,6 +16,7 @@ a:visited {
   cursor: pointer;
 }
 
+ul,
 a:link:active,
 a:visited:active {
   color: $blue;
@@ -48,7 +49,7 @@ a:hover {
 
 %animation {
   animation-direction: normal;
-  animation-duration: 10s;
+  animation-duration: 5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }

@@ -5,12 +5,14 @@ body {
   @import url("https://fonts.googleapis.com/css?family=Raleway");
   font-family: "Source Sans Pro", sans-serif; }
 
+ul,
 a:link,
 a:visited {
   color: #2b6db4;
   text-decoration: none;
   cursor: pointer; }
 
+ul,
 a:link:active,
 a:visited:active {
   color: #2b6db4; }
@@ -33,7 +35,7 @@ a:hover {
 
 .poke, .nav {
   animation-direction: normal;
-  animation-duration: 10s;
+  animation-duration: 5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards; }
 
