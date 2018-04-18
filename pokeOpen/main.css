@@ -1,0 +1,49 @@
+.pokeWrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr, 1fr;
+    height: 100%;
+    width: 100%;
+
+}
+.upWarp {
+    grid-column: 1;
+    grid-row: 1;
+    background-image: url('pokeTop.png');
+    /* position: sticky; */
+    /* animation-name: topTranslate;
+    animation-direction: normal;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    /* animation-fill-mode: forwards; */
+     height: 100%;
+    width: 100%;
+}
+
+.downWarp {
+    grid-column: 1;
+    grid-row: 1;
+    background-image: url('pokeBot.png');
+    /* position: sticky; */
+    /* animation-name: botTranslate;
+    animation-direction: normal;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;*/
+    height: 100%;
+    width: 100%;
+}
+
+@keyframes topTranslate {
+    from {transform: translateY(500px)}
+    to {transform: translateY(-500px)}
+}
+
+@keyframes botTranslate {
+    from {transform: translateY(500px)}
+    to {transform: translateY(700px)}
+}
+
+body {
+    overflow: hidden;
+}

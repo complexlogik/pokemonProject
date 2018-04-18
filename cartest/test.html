@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
+      <link type="text/css" rel="stylesheet"
+          href="main.css"
+          media="screen,projection" />
+        <link type="text/css" rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css"
+          media="screen,projection" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0"
+            />
+        </head>
+
+        <body>
+         <div class='wrapper'>
+          <div class= 'z-depth-5 card'id='shinx'>
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="shinx.png">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator yellow-text text-darken-4 center-align">Shinx
+          
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">luxio<i
+                  class="material-icons right">close</i></span>
+              <p>pokemon info</p>
+            </div>
+          </div>
+          <div class= 'z-depth-5 card' id='luxio'>
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="luxio.png">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator yellow-text text-darken-4 center-align">Luxio
+            
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">luxio<i
+                    class="material-icons right">close</i></span>
+                <p>pokemon info</p>
+              </div>
+            </div>
+            <div class= 'z-depth-5 card'id='luxray'>
+                <div class="card-image waves-effect waves-block waves-light">
+                  <img class="activator" src="luxray.png">
+                </div>
+                <div class="card-content">
+                  <span class="card-title activator yellow-text text-darken-4 center-align">Luxray
+              
+                </div>
+                <div class="card-reveal">
+                  <span class="card-title grey-text text-darken-4">Luxray<i
+                      class="material-icons right">close</i></span>
+                  <p>pokemon info</p>
+                </div>
+              </div>
+        </div>
+          <script src='main.js'></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+          </body>
+        </html>
+
+      }
+      .wrapper {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          grid-template-rows: 1fr 1fr 1fr;
+          width: 95%;
+          margin: 5em 3em 0 3em !important; 
+      }
+      
+      nav {
+          color: #fff;
+           background-color: #ee6e73; 
+           width: 0px !important; 
+           height: 0px !important; 
+           line-height: 0px !important; 
+      }
+      .card #shinx #luxio #luxray {
+          display: flex !important;
+          flex-direction: row !important;
+          height: 150x !important;
+          width: 150px !important;
+          padding: 2px !important;
+          margin: 2px!important;
+      }
+      
+      #shinx {
+          grid-column: 1;
+          grid-row: 1; 
+      }
+      
+      #luxio {
+          grid-column: 2;
+          grid-row: 1; 
+      }
+      
+      #luxray {
+          grid-column: 3;
+          grid-row: 1; 
+      }
+      
+      .card .card-image img {
+          display: block;
+          border-radius: 2px 2px 0 0;
+          position: relative;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          height: 300px;
+          width: 300px;
+      }
